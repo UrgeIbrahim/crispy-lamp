@@ -6,12 +6,6 @@ import models
 
 app = Flask(__name__)
 
-# def save_data():
-#     try:
-#         data = json.loads(request.cookies.get('User'))
-#     except TypeError:
-#         data = {}
-#     return data
 
 app.secret_key = 'lq3j45lj*&(YKDH(*YDSH*&^DHKJHidya98y34ukh98**&6andfjka'
 
