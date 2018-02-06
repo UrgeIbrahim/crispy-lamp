@@ -1,0 +1,15 @@
+columns = [username,
+    name,
+    address,
+    phone_number,
+    job_title,
+    job_duration,
+    job_company,
+    job_location,
+    job_description,
+    experience_one,
+    edu_degree,
+    edu_completion_date,
+    edu_university,
+    edu_location
+           ]

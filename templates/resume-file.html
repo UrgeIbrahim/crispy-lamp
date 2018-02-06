@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/resume-css.css">
+</head>
+<body>
+    <div class="card">
+        <header id="info">
+            <h1>{{ user_instance.name }}</h1>
+            <span>{{ user_instance.address }} &bull;
+                  {{ user_instance.phone_number }} &bull;
+                {{ user_instance.email_address }}</span>
+        </header>
+        {#    <section id="statement">#}
+        {#        <h2>Statement of Purpose</h2>#}
+        {#        <p>{{ data.get('purpose') }}</p>#}
+        {#    </section>#}
+        <section id="employment">
+            <h2>Employment</h2>
+
+            {% for job in jobs %}
+                <section>
+                    <div class="jobtable">
+                        <div class="tablerow">
+                            <span class="jobtitle">{{ job.job_title }}</span>
+                            <span class="right">{{ job.job_duration }}</span>
+                        </div>
+                        <div class="tablerow">
+                            <span>{{ job.job_company }}</span>
+                            <span class="right">{{ job.job_location }}</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>{{ job.employment_bullet_1 }}</li>
+                        <li>{{ job.employment_bullet_2 }}</li>
+                        <li>{{ job.employment_bullet_3 }}</li>
+                    </ul>
+                </section>
+            {% endfor %}
+
+        </section>
+        <section id="skills">
+            <h2>Experience</h2>
+            <div class="skillstable">
+                <div class="tablerow">
+                    <ul class="cell">
+                        <li>{{ user_instance.experience_one }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <div class="pagebreak"></div>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edtable">
+                <div class="tablerow">
+                    <span class="jobtitle">{{ user_instance.edu_degree }}</span>
+                    <span class="right">{{ user_instance.edu_completion_date }}</span>
+                </div>
+                <div class="tablerow">
+                    <span>{{ user_instance.edu_university }}</span>
+                    <span class="right">{{ user_instance.edu_location }}</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends 'resume_setup_form.html' %}
+
+{% block flash_messages %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ol>
+            {% for message in messages %}
+                    <li>{{ message }}</li>
+            {% endfor %}
+            </ol>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'resume_layout.html' %}
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-warning " role="alert">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="grid-140 divclass">
+        <h1>Ready To Start Building Your Resume?</h1>
+    </div>
+    <form action="{{ url_for('save') }}" method="POST">
+        <div>
+            <h4>Introduction</h4>
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="" placeholder="xXusernameXx" class="form-control flat" id="username">
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="" placeholder="First M. Last" class="form-control flat" id="name">
+            <label for="address">Address:</label>
+            <input type="text" name="address" value="" placeholder="123 Blank St., San Francisco, CA 94104" class="form-control flat" id="address">
+
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" name="phone_number" value="" placeholder="555.555.1234"
+                   class="form-control flat" id="phone_number">
+            <label for="email_address">Email Address:</label>
+            <input type="email" name="email_address" value="" placeholder="first.m.last@email.fake.com"
+                   class="form-control flat" id="email_address">
+
+        </div>
+
+        <div>
+            <h4>Experience</h4>
+            <label for="experience_one">Experience #1:</label>
+            <input type="text" name="experience_one" value=""
+                   placeholder="Pants Inspection" class="form-control flat" id="experience_one">
+        </div>
+
+        <div>
+            <h4>Education</h4>
+            <label for="edu_degree">Degree :</label>
+            <input type="text" name="edu_degree" value=""
+                   placeholder="Quantum Dance, MS" class="form-control flat" id="edu_degree">
+
+            <label for="edu_completion_date">Year:</label>
+            <input type="text" name="edu_completion_date" value=""
+                   placeholder="September" class="form-control flat" id="edu_completion_date">
+
+            <label for="edu_university">University:</label>
+            <input type="text" name="edu_university" value=""
+                   placeholder="Crazy Go Nuts University" class="form-control flat" id="edu_university">
+
+            <label for="edu_location">City, State:</label>
+            <input type="text" name="edu_location" value=""
+                   placeholder="Population, Tire" class="form-control flat" id="edu_location">
+        </div>
+
+        <input type="hidden" value="resume_setup_form" name="page">
+
+        <div id="submit-div">
+            <input class="btn btn-hg btn-primary" type="submit" value="Submit" id="submit-btn">
+        </div>
+    </form>
+{% endblock %}

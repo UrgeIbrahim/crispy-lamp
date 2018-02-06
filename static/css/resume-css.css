@@ -1,0 +1,112 @@
+body {
+    margin: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+}
+
+header {
+    font-family: "Trajan Pro", serif;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30pt;
+    border-bottom: 1px solid black;
+    margin-bottom: 4px;
+}
+
+header span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10pt;
+    float: right;
+}
+
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 14pt;
+}
+
+section p {
+    margin-left: 40px;
+}
+
+section.coverletter {
+    margin-top: 40px;
+}
+
+section.coverletter p {
+    margin-left: 0px;
+}
+
+section ul {
+    list-style-type: circle;
+}
+
+.card {
+    overflow: auto;
+    padding: 5%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.jobtable {
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid black;
+    margin-left: 20px;
+}
+
+.edtable {
+    display: table;
+    width: 100%;
+    margin-left: 20px;
+    padding-bottom: 15px;
+}
+
+.skillstable {
+    display: table;
+    width: 100%;
+}
+
+.table {
+    display: table;
+    margin-left: 20px;
+}
+
+.tablerow {
+    display: table-row;
+}
+
+.jobtitle {
+    display: table-cell;
+    font-style: italic;
+}
+
+.right {
+    display: table-cell;
+    text-align: right;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.onlinecell {
+    font-style: italic;
+    padding-right: 10px;
+}
+
+.urlcell {
+    display: table-cell;
+    letter-spacing: 1px;
+}
+
+.pagebreak {
+    page-break-before: always;
+}

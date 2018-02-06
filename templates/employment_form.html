@@ -1,0 +1,61 @@
+{% extends 'resume_layout.html' %}
+{% block content %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-warning " role="alert">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <div class="grid-140 divclass">
+        <h1>Employment</h1>
+    </div>
+    <form action="{{ url_for('save') }}" method="POST">
+
+        <div>
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" value="{{ username }}" class="form-control flat" id="username" disabled>
+
+            <label for="job_title">Job Title:</label>
+            <input type="text" name="job_title" value=""
+                   placeholder="Pants Inspector" class="form-control flat" id="job_title">
+
+            <label for="job_duration">Duration:</label>
+            <input type="text" name="job_duration" value=""
+                   placeholder="February 2011 - Present" class="form-control flat" id="job_duration">
+
+            <label for="job_company">Company:</label>
+            <input type="text" name="job_company" value=""
+                   placeholder="Perfect Pants, LLC" class="form-control flat" id="job_company">
+
+            <label for="job_location">City, State:</label>
+            <input type="text" name="job_location" value=""
+                   placeholder="San Francisco, CA" class="form-control flat" id="job_location">
+
+            <label for="employment_bullet_1">1st Bullet:</label>
+            <input type="text" name="employment_bullet_1" value=""
+                   placeholder="Employment Bullet #1." class="form-control flat" id="employment_bullet_1">
+
+            <label for="employment_bullet_2">2nd Bullet:</label>
+            <input type="text" name="employment_bullet_2" value=""
+                   placeholder="Employment Bullet #2." class="form-control flat" id="employment_bullet_2">
+
+            <label for="employment_bullet_3">3rd Bullet:</label>
+            <input type="text" name="employment_bullet_3" value=""
+                   placeholder="Employment Bullet #3." class="form-control flat" id="employment_bullet_3">
+        </div>
+
+        <input type="hidden" value="employment_form" name="page">
+        <input type="hidden"  value="{{ username }}" name="username">
+
+        <div id="submit-div">
+            <input style="float: left" class="btn btn-hg btn-primary" name="choice"  type="submit" value="New Employment" id="submit-btn">
+            <input style="float: right" class="btn btn-hg btn-primary" name="choice" type="submit" value="Submit" id="submit-btn">
+        </div>
+    </form>
+{% endblock %}
